@@ -1,0 +1,260 @@
+html,body{
+    font-size: 16px;
+    color: #333;
+}
+.container{
+    height: 100%;
+}
+.c-face{
+    position: relative;
+    height: 460px;
+    width: 600px;
+    margin: auto;
+}
+.eye{
+    position: absolute;
+    top: 100px;
+    width: 240px;
+    height: 240px;
+}
+.l-eye{
+    left: 20px;
+}
+.r-eye{
+    right: 20px;
+}
+.eye:after{
+    position: absolute;
+    z-index: 9;
+    content: '';
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border:solid 20px #220c0c;
+}
+.eye:before{
+    position: absolute;
+    z-index: 3;
+    content: '';
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: solid 40px #0cc2c6;
+}
+.l-eye:before{
+    right: 0;
+}
+.r-eye:before{
+    left: 0;
+}
+.eyeBall,.css-eye{
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #220c0c;
+}
+.eyeBall{
+    /*clip: rect(40px,200px,80px,0);*/
+}
+.css-eye{
+    display: none;
+    clip: rect(0,80px,40px,0);
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+.l-eye .eyeBall,.l-eye .css-eye{
+    left: 100px;
+}
+.r-eye .eyeBall{
+    right: 17px;
+}
+.r-eye .css-eye{
+    right: 100px;
+}
+.eyeBall:before,.css-eye:before{
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.eyeBall{
+    transform-origin: 20% 42%;
+    animation: spin 2s infinite linear;
+    -webkit-animation: spin 2s infinite linear;
+    animation-direction:alternate;
+    -webkit-animation-direction:alternate;
+}
+.c-face:hover .eyeBall{
+    clip: rect(40px,200px,80px,0);
+    animation:spin .1s;
+    animation-play-state:paused;
+    -webkit-animation-play-state:paused;
+}
+.c-face:hover .r-eye .eyeBall{
+    right: 100px;
+}
+.c-face:hover .css-eye{
+    display: block;
+    animation: wink .35s 2 linear;
+    -webkit-animation: wink .35s 2 linear;
+}
+/*animation*/
+@keyframes spin {
+    0%{
+        transform: rotate(-40deg);
+    }
+    50%{
+        transform: rotate(-100deg);
+    }
+    100%{
+        transform: rotate(-180deg);
+    }
+}
+@keyframes wink {
+    0%{
+        transform: rotateX(0);
+    }
+    20%{
+        transform: rotateX(50deg);
+    }
+    50%{
+        transform: rotateX(90deg);
+    }
+    70%{
+        transform: rotateX(40deg);
+    }
+    100%{
+        transform: rotateX(0);
+    }
+}
+.nose{
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 280px;
+    background: url(img/nose.png) no-repeat center bottom/contain;
+}
+.nose:before{
+    position: absolute;
+    content: '';
+    top: 15px;
+    left: -23px;
+    width: 125px;
+    height: 200px;
+    border-radius: 60px;
+    border: solid 20px #220c0c;
+    clip: rect(0,200px,60px,0);
+}
+.base-info{
+    width: 600px;
+    margin: 30px auto 0;
+    font-size: 20px;
+    font-weight: normal;
+}
+.base-info label{
+    padding-right: 10px;
+   text-align: right;
+}
+.base-info *{
+    margin: 0;
+}
+.skill-atlas{
+    height: 100%;
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+#echart,#words{
+    width: 500px;
+    height: 500px;
+}
+#words .lt_fmPlWGyh{
+    color: #52fefd;
+}
+#words .lt_fmPlWSin{
+    color:  #34bd8a;
+}
+#words .lt_fmPlWPos{
+    color: #fecf52;
+}
+#words .lt_fmPlWBig{
+    color: #8e84fe;
+}
+#cat{
+    position: relative;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.thanks{
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 68px;
+}
+.thanks:before,.thanks:after{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url(img/thanks.png) no-repeat center/contain;
+}
+.thanks:before{
+    clip: rect(0,150px,68px,0);
+    animation: Lclip 5s infinite ease;
+}
+.thanks:after{
+    clip: rect(0,300px,68px,150px);
+    animation: Rclip 5s infinite ease;
+}
+@keyframes Lclip {
+    0%{
+        clip: rect(0,150px,68px,0);
+    }
+    50%{
+        clip: rect(0,150px,68px,150px);
+    }
+    100%{
+        clip: rect(0,150px,68px,0);
+    }
+}
+@keyframes Rclip {
+    0%{
+        clip: rect(0,300px,68px,150px);
+    }
+    50%{
+        clip: rect(0,150px,68px,150px);
+    }
+    100%{
+        clip: rect(0,300px,68px,150px);
+    }
+}
+.resume{
+    display: block;
+    text-align: center;
+}
