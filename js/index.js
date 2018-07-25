@@ -18,7 +18,7 @@ $(function () {
         //Design
         controlArrows: true,
         verticalCentered: true,
-        // sectionsColor : ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90', '#ef8200'],
+        // sectionsColor : ['#e8cb9e', '#faebd7', '#f5aef5', '#ab7adc'],
         //Custom selectors
         sectionSelector: '.section',
         slideSelector: '.slide',
@@ -72,6 +72,11 @@ $(function () {
         tooltip : {
             trigger: 'item',
             formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        legend: {
+            x : 'center',
+            y : 'bottom',
+            data:['html5','JavaScript','CSS3','JQuery','ES6','bootstrap4.0','node','react']
         },
         toolbox: {
             show : true,
@@ -157,7 +162,7 @@ $(function () {
         radius: '60%',
         radiusMin: 75,
         bgDraw: true,
-        bgColor: '#fff',
+        bgColor: '#faebd7',
         opacityOver: 1.00,
         opacityOut: 0.05,
         opacitySpeed: 6,
