@@ -285,6 +285,9 @@ html,body{
     color: #fff;
 }
 /*section3*/
+.section3{
+    background-color: #eee8aa;
+}
 .section3 h3{
     padding-top: 30px;
     text-align: center;
